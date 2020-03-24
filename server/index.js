@@ -7,7 +7,7 @@ var http = require('http');
 var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer({});
 
-app.use(express.static(__dirname + '/../public'))
+app.use(express.static(__dirname + '/../public'));
 
 
 //______________________________________________________________
@@ -30,7 +30,6 @@ app.all('/images*', (req, res) => {
 //______________________________________________________________
 // reviews
 //______________________________________________________________
-app.all('/api/properties', (req, res) => {
 app.all('/api/listing', (req, res) => {
   proxy.web(req, res, {target: "http://localhost:3500"});
 })
@@ -43,7 +42,6 @@ app.all('/api/reviews', (req, res) => {
 //______________________________________________________________
 // recommendations
 //______________________________________________________________
-app.all('/api/properties', (req, res) => {
 app.all('/recommendations', (req, res) => {
   proxy.web(req, res, {target: "http://localhost:3009"});
 })
@@ -52,7 +50,6 @@ app.all('/recommendations', (req, res) => {
 //______________________________________________________________
 // photos
 //______________________________________________________________
-app.all('/api/properties', (req, res) => {
 app.all('/photos', (req, res) => {
   proxy.web(req, res, {target: "http://localhost:3001"});
 })
