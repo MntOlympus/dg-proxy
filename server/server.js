@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3079;
+const PORT = 3010;
 
-var http = require('http');
-var httpProxy = require('http-proxy');
-var proxy = httpProxy.createProxyServer({});
+const http = require('http');
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createProxyServer({});
+
+const reservationsURL = "http://localhost:3000";
+const photosURL = "http://localhost:3001";
+const reviewsURL = "http://localhost:3500";
+const recommendationsURL = "http://localhost:3009";
 
 app.use(express.static(__dirname + '/../public'));
 
@@ -16,43 +21,41 @@ app.use(express.static(__dirname + '/../public'));
 
 
 //______________________________________________________________
-// reservations
+// photos
 //______________________________________________________________
-app.all('/api/properties', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3000"});
+app.all('/photos', (req, res) => {
+  proxy.web(req, res, {target: photosURL});
 })
 
-app.all('/images*', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3000"});
-})
-
-
-//______________________________________________________________
-// reviews
-//______________________________________________________________
+// ______________________________________________________________
+//  reviews
+// ______________________________________________________________
 app.all('/api/listing', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3500"});
+  proxy.web(req, res, {target: reviewsURL});
 })
 
 app.all('/api/reviews', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3500"});
+  proxy.web(req, res, {target: reviewsURL});
 })
 
+//______________________________________________________________
+// reservations
+//______________________________________________________________
+app.all('/api/properties', (req, res) => {
+  proxy.web(req, res, {target: reservationsURL});
+})
+
+app.all('/images*', (req, res) => {
+  proxy.web(req, res, {target: reservationsURL});
+})
 
 //______________________________________________________________
 // recommendations
 //______________________________________________________________
 app.all('/recommendations', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3009"});
+  proxy.web(req, res, {target: recommendationsURL});
 })
 
-
-//______________________________________________________________
-// photos
-//______________________________________________________________
-app.all('/photos', (req, res) => {
-  proxy.web(req, res, {target: "http://localhost:3001"});
-})
 
 //______________________________________________________________
 
