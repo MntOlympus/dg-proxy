@@ -7,10 +7,10 @@ const http = require('http');
 const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer({});
 
-const reservationsURL = "http://localhost:3000";
+const reservationsURL = "http://ec2-13-59-243-8.us-east-2.compute.amazonaws.com/";
 const photosURL = "http://localhost:3001";
 const reviewsURL = "http://localhost:3500";
-const recommendationsURL = "http://localhost:3009";
+const recommendationsURL = "http://ec2-3-89-251-90.compute-1.amazonaws.com:3009/";
 
 app.use(express.static(__dirname + '/../public'));
 

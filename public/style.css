@@ -2,21 +2,42 @@ html {
   background-image: url('https://i.ya-webdesign.com/images/cool-background-png-6.png');
 }
 
-.container {
-  position: relative;
-  width: 800px;
-  max-height: 300px important!;
+body {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 24px;
+  line-height: 20px;
+  color: #484848;
 }
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
+/* _________________Austin_______________________ */
 
 #photos {
 
 }
 
+
+/* __________________Laura_______________________ */
+
 #app {
-font-size: x-small;
+  float: left;
+  width: 800px;
+  font-size: small;
+}
+
+
+/* __________________Bradley_______________________ */
+
+#reservation {
+  position: fixed;
+  top: 20px;
+  margin-left: 900px;
+  margin-bottom: auto;
+}
+
+
+
+
+/* __________________Daniel_______________________ */
+
+#recommendations {
+  float: left;
 }
