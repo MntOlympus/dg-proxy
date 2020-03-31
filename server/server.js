@@ -8,8 +8,8 @@ const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer({});
 
 const reservationsURL = "http://ec2-13-59-243-8.us-east-2.compute.amazonaws.com/";
-const photosURL = "http://localhost:3001";
-const reviewsURL = "http://localhost:3500";
+const photosURL = "http://3.101.43.150:8080/";
+const reviewsURL = "http://18.223.172.133/";
 const recommendationsURL = "http://ec2-3-89-251-90.compute-1.amazonaws.com:3009/";
 
 app.use(express.static(__dirname + '/../public'));

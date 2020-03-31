@@ -1,0 +1,7 @@
+version: "2.0"
+services:
+  web:
+    container_name: proxy
+    build: .
+    ports:
+      - "3010:3010"

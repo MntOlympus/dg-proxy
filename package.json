@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "hosts four separate components running in node on page",
   "author": "DanielGodfrey-Dev",
-  "license": "",
+  "license": "MntOlympus",
   "engines": {
     "node": ">=6.13.0"
   },
